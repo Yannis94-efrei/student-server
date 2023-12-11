@@ -1,6 +1,12 @@
 package efrei.studentserver.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Integer id;
     private Integer age;
     private String name;
@@ -27,5 +33,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
