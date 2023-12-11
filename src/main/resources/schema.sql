@@ -1,0 +1,6 @@
+DELETE FROM Student;
+CREATE TABLE IF NOT EXISTS Student (
+    Id INT PRIMARY KEY,
+    name VARCHAR(255),
+    age INT
+);
