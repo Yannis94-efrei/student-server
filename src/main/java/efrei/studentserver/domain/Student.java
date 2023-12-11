@@ -5,8 +5,11 @@ import jakarta.persistence.*;
 @Entity
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
+    @SequenceGenerator(
+            name = "sequenceGenerator",
+            sequenceName = "RTDS_ADSINPUT_SEQ",
+            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "sequenceGenerator")
     private Integer id;
     private Integer age;
     private String name;
