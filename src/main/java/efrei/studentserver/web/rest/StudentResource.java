@@ -3,6 +3,7 @@ package efrei.studentserver.web.rest;
 import efrei.studentserver.domain.Student;
 import efrei.studentserver.service.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,10 @@ public class StudentResource {
     @GetMapping("/students")
     public List<Student> getStudents(){
         return studentService.findAll();
+    }
+
+    @GetMapping("/students/{id}")
+    public Student getStudent(@PathVariable Integer id){
+        return studentService.findWithId(id);
     }
 }

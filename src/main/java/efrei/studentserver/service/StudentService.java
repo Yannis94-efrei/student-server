@@ -5,6 +5,7 @@ import efrei.studentserver.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -17,5 +18,9 @@ public class StudentService {
 
     public List<Student> findAll(){
         return studentRepository.findAll();
+    }
+
+    public Student findWithId(Integer id){
+        return studentRepository.findById(id).orElse(null);
     }
 }
