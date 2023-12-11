@@ -4,3 +4,5 @@ CREATE TABLE IF NOT EXISTS Student (
     age INT
 );
 TRUNCATE TABLE Student;
+
+create sequence IF NOT EXISTS RTDS_ADSINPUT_SEQ start with 1 increment by 1;
