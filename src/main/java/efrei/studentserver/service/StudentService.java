@@ -28,18 +28,18 @@ public class StudentService {
         Student newStudent = new Student();
         newStudent.setName(student.getName());
         newStudent.setAge(student.getAge());
+        newStudent.setId(studentRepository.findAll().size() + 1);
         return studentRepository.save(newStudent);
     }
 
-    public Student update(Integer id, Student updatedStudent) {
-        Optional<Student> existingStudent = studentRepository.findById(id);
-
-        if (existingStudent.isPresent()) {
-            Student student = existingStudent.get();
-            student.setName(updatedStudent.getName());
-            student.setAge(updatedStudent.getAge());
-            return studentRepository.save(student);
-        } else {
+    public Student update(Integer id, Student student) {
+        Student studentToUpdate = studentRepository.findById(id).orElse(null);
+        if (studentToUpdate != null) {
+            studentToUpdate.setName(student.getName());
+            studentToUpdate.setAge(student.getAge());
+            return studentRepository.save(studentToUpdate);
+        }
+        else {
             return null;
         }
     }

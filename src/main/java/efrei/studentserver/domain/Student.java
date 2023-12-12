@@ -2,17 +2,23 @@ package efrei.studentserver.domain;
 
 import jakarta.persistence.*;
 
+@SequenceGenerator(
+        name = "sequenceGenerator",
+        sequenceName = "SEQUENCE_STUDENT",
+        allocationSize = 1)
 @Entity
 public class Student {
     @Id
-    @SequenceGenerator(
-            name = "sequenceGenerator",
-            sequenceName = "RTDS_ADSINPUT_SEQ",
-            allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "sequenceGenerator")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     private Integer id;
     private Integer age;
     private String name;
+
+    public Student(){}
+    public Student(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public Integer getId() {
         return id;
