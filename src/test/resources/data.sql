@@ -1,1 +1,1 @@
-DELETE FROM student;
+TRUNCATE TABLE student;
