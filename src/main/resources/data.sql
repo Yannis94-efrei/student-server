@@ -1,5 +1,5 @@
-INSERT INTO student (name, age) VALUES ('Alice', 20);
-INSERT INTO student (name, age) VALUES ('Bob', 22);
-INSERT INTO student (name, age) VALUES ('Charlie', 21);
-INSERT INTO student (name, age) VALUES ('David', 23);
-INSERT INTO student (name, age) VALUES ('Eva', 19);
+INSERT INTO Student (Id, name, age) VALUES (NEXTVAL('SEQUENCE_STUDENT'), 'Alice', 20);
+INSERT INTO Student (Id, name, age) VALUES (NEXTVAL('SEQUENCE_STUDENT'), 'Bob', 22);
+INSERT INTO Student (Id, name, age) VALUES (NEXTVAL('SEQUENCE_STUDENT'), 'Charlie', 21);
+INSERT INTO Student (Id, name, age) VALUES (NEXTVAL('SEQUENCE_STUDENT'), 'David', 23);
+INSERT INTO Student (Id, name, age) VALUES (NEXTVAL('SEQUENCE_STUDENT'), 'Eva', 19);

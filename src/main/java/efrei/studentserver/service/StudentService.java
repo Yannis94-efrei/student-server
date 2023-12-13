@@ -28,6 +28,7 @@ public class StudentService {
         Student newStudent = new Student();
         newStudent.setName(student.getName());
         newStudent.setAge(student.getAge());
+        newStudent.setId(studentRepository.findAll().size() + 1);
         return studentRepository.save(newStudent);
     }
 
